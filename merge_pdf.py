@@ -7,6 +7,7 @@ input_pdf2 = open("D:\\pdf2.pdf", "rb")
 input_pdf3 = open("D:\\pdf3.pdf", "rb")
 
 inputs = [input_pdf1, input_pdf2, input_pdf3]
+writer = PdfFileWriter()
 for reader in map(PdfFileReader, inputs):
     for page_index in range(reader.getNumPages()):
         writer.addPage(reader.getPage(page_index))
